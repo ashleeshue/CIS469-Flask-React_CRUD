@@ -5,13 +5,13 @@ import os
 
 app = Flask(__name__)
 
-# Distribution Version
-### app = Flask(__name__, static_folder='_frontend/users/dist', static_url_path='')
-# Add CORS support
-### CORS(app)
-### @app.route('/', methods=['GET'])
-### def defaultPage():
-###    return send_file(os.path.join(app.static_folder, 'index.html'))
+ #Distribution Version
+app = Flask(__name__, static_folder='_frontend/users/dist', static_url_path='')
+#Add CORS support
+CORS(app)
+@app.route('/', methods=['GET'])
+def defaultPage():
+    return send_file(os.path.join(app.static_folder, 'index.html'))
 
 # create the database first
 @app.route('/createDB')
